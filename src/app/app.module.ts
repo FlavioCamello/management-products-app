@@ -7,7 +7,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { PrincipalComponent } from './pages/compartilhado/principal/principal.component';
 
 import { MatCardModule } from '@angular/material/card';
@@ -17,6 +17,16 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatTableModule } from '@angular/material/table';
+import { MatListModule } from '@angular/material/list';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatMenuModule } from '@angular/material/menu';
+
+import { ProductCreateComponent } from './pages/product-create/product-create.component';
+import { ProductListComponent } from './pages/product-list/product-list.component';
+import { ProductEditComponent } from './pages/product-edit/product-edit.component';
+import { ProductService } from './services/product.service';
 //import { TokenInterceptor } from './services/interceptors/token.interceptor';
 
 @NgModule({
@@ -24,7 +34,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     AppComponent,
     LoginComponent,
     HomeComponent,
-    PrincipalComponent
+    PrincipalComponent,
+    ProductCreateComponent,
+    ProductListComponent,
+    ProductEditComponent
   ],
   imports: [
     BrowserModule,
@@ -39,9 +52,14 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatFormFieldModule,  
+    MatTableModule,
+    MatListModule,
+    MatGridListModule,
+    MatMenuModule   
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

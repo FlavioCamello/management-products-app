@@ -1,0 +1,22 @@
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+  }
+  
+  .mat-card-title {
+    text-align: center;
+  }
+  
+  .form-field-full {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .mat-card-actions {
+    justify-content: flex-end;
+  }
+  
+  button.full {
+    width: 100%;
+  }
+  

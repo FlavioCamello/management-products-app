@@ -1,0 +1,42 @@
+<mat-card class="container">
+  <mat-card-title>Edit Product</mat-card-title>
+  <form [formGroup]="formEditProduct" (ngSubmit)="onSubmit()">
+    <mat-card-content>
+      <mat-form-field appearance="outline" class="form-field-full">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" required>
+        <mat-error *ngIf="formEditProduct.get('name')!.hasError('required') && formEditProduct.get('name')!.touched">
+          Name is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="form-field-full">
+        <mat-label>Stock Quantity</mat-label>
+        <input type="number" matInput formControlName="stockQuantity" required>
+        <mat-error *ngIf="formEditProduct.get('stockQuantity')!.hasError('required') && formEditProduct.get('stockQuantity')!.touched">
+          Stock Quantity is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="form-field-full">
+        <mat-label>Cost Price</mat-label>
+        <input type="number" matInput formControlName="costPrice" required>
+        <mat-error *ngIf="formEditProduct.get('costPrice')!.hasError('required') && formEditProduct.get('costPrice')!.touched">
+          Cost Price is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="form-field-full">
+        <mat-label>Sale Price</mat-label>
+        <input type="number" matInput formControlName="salePrice" required>
+        <mat-error *ngIf="formEditProduct.get('salePrice')!.hasError('required') && formEditProduct.get('salePrice')!.touched">
+          Sale Price is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="form-field-full">
+        <mat-label>Observation</mat-label>
+        <textarea matInput formControlName="notes"></textarea>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions align="end">
+      <button mat-raised-button color="primary" type="submit">Save</button>
+    </mat-card-actions>
+  </form>
+</mat-card>
